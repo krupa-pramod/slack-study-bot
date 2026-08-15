@@ -70,6 +70,12 @@ app.command("/studdybuddy-remind", async ({ command, ack, respond }) => {
 
     const parts = command.text.split(",");
 
+    if (parts.length < 2) {
+        return respond({
+            text: "Please separate the assignment and time with a comma. Example: `/studdybuddy-remind Test123, 10m`"
+        });
+    }
+
     const assignment = parts[0].trim();
     const time = parseInt(parts[1].trim());
 
