@@ -9,6 +9,14 @@ const app = new App({
   socketMode: true
 });
 
+app.command("/studdybuddy-ping", async ({ ack, respond }) => {
+    await ack();
+
+    await respond({
+        text: "Pong!"
+    });
+});
+
 app.command("/studdybuddy-help", async({ack, respond}) => {
     await ack();
     await respond({
