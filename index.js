@@ -9,18 +9,6 @@ const app = new App({
   socketMode: true
 });
 
-app.command("/studdybuddy-study", async ({ command, ack, respond }) => {
-  const start = Date.now();
-
-  await ack();
-
-  const latency = Date.now() - start;
-
-  await respond({
-    text: `Pong! Latency is ${latency}ms`
-  });
-});
-
 app.command("/studdybuddy-help", async({ack, respond}) => {
     await ack();
     await respond({
@@ -29,7 +17,6 @@ app.command("/studdybuddy-help", async({ack, respond}) => {
         /studdybuddy-add-homework: add a homework assignment to the assignments list
         /studdybuddy-view-homework: view the list of homework assignments saved
         /studdybuddy-remind: set a timed reminder to do your assignment
-        /studdybuddy-study: start a timed study session for a specific subject
         /studdybuddy-funfact: tells an educational fun fact
         /studdybuddy-help: displays this help message
         `
