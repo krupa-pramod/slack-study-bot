@@ -71,7 +71,7 @@ app.command("/studdybuddy-remind", async ({ command, ack, respond }) => {
     const parts = command.text.split(",");
 
     const assignment = parts[0].trim();
-    const time = Number(parts[1].trim());
+    const time = parseInt(parts[1].trim());
 
     await respond({
         text: "I'll remind you about " + assignment + " in " + time + " minutes!"
